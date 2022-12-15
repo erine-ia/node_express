@@ -1,0 +1,11 @@
+Iniciar o npm
+npm init
+
+Instalar o Express:
+npm install express --save
+
+Instalar o Nodemon:
+npm install -g nodemon
+
+depois rodar o servidor com:
+nodemon app.js
