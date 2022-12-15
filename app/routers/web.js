@@ -9,8 +9,10 @@ module.exports = function(app){
   });
   
     app.get('/',function(req,res){
-    let listaClientes = clientesModel.all();
-    res.render("site/home", {clientes:listaClientes});
+    clientesModel.all(function(err, resultado){
+      res.render("site/home", {clientes:resultado});
+    });
+    
   });
 
 }
