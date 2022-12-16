@@ -1,4 +1,4 @@
-const clientesModel = require('../models/clientesModel')();
+const clienteController = require('../controllers/clienteController');
 
 // const cliente = require('../models/clientesModel')()
 
@@ -9,9 +9,7 @@ module.exports = function(app){
   });
   
     app.get('/',function(req,res){
-    clientesModel.all(function(err, resultado){
-      res.render("site/home", {clientes:resultado});
-    });
+        clienteController.index(req, res)
     
   });
 
