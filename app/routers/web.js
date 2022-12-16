@@ -13,4 +13,9 @@ module.exports = function(app){
     
   });
 
+    app.get('/detalhe/:id',function(req,res){
+      clienteController.show(req, res)
+
+});
+
 }
