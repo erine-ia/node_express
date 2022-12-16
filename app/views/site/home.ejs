@@ -15,10 +15,19 @@
 </ul>
 
 <div class="formulario">
+  
+    <%if(!erros){%>
+      <ul>
+        <%for(chave in erros){%>
+           <li><%=erros[chave].msg%></li>
+         <%}%>
+      </ul>
+    <%}%>
+  
   <form action="/" method="post">
-    <input type="text" name="nome" placeholder="nome">
+    <input type="text" name="nome" placeholder="nome" value="<%=dados.nome%>">
 
-    <input type="email" name="email" placeholder="email">
+    <input type="email" name="email" value="<%=dados.email%>" placeholder="email">
     <button >Adicionar</button>
   </form>
 </div>
