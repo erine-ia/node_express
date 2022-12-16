@@ -7,11 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Home 5678</h1>
+    <h1>Home</h1>
   <ul>
     <% for(let chave in clientes) {%>
       <li><%=clientes[chave].nome%>  =>  <%=clientes[chave].email%></li>
     <% } %>
 </ul>
+
+<div class="formulario">
+  <form action="/" method="post">
+    <input type="text" name="nome" placeholder="nome">
+
+    <input type="email" name="email" placeholder="email">
+    <button >Adicionar</button>
+  </form>
+</div>
 </body>
 </html>

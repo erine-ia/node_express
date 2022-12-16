@@ -7,15 +7,24 @@ module.exports.index = function(req, res){
       });
 }
 
-module.exports.store = function(){
-    
+module.exports.store = function(req, res){
+    let dados = req.body;
+    clientesModel.save(dados, function(err, resultado){
+      if(resultado[0] && !err){
+            res.render("site/detalhe", {clientes:resultado[0]});   
+         }else{
+               console.log('Erro ao Adicionar cliente');
+               res.redirect('/')
+         }
+
+    })
 }
 
 
 module.exports.show = function(req, res){
       clientesModel.find(req.params.id, function(err, resultado){
 
-            if(resultado[0] && err){
+            if(resultado[0] && !err){
                res.render("site/detalhe", {clientes:resultado[0]});   
             }else{
                   console.log('Esse cliente não existe');

@@ -15,6 +15,12 @@ module.exports = function(){
           
     }
 
+    this.save = function(dados, retorno){
+        var conexao = db()
+        return  conexao.query('insert into clientes set ? ', dados, retorno)
+          
+    }
+
 
     return this
 
